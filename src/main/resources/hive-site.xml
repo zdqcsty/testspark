@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+  
+  <property>
+    <name>hive.metastore.warehouse.dir</name>
+    <value>hdfs://behhb001/hive/warehouse</value>
+  </property>
+    
+  <property>
+    <name>hive.exec.scratchdir</name>
+    <value>/user/hive/tmp</value>
+  </property>
+    
+  <property>
+    <name>hive.querylog.location</name>
+    <value>/user/hive/log</value>
+  </property>
+    
+  <property>
+    <name>javax.jdo.option.ConnectionURL</name>
+    <value>jdbc:mysql://hebing3.novalocal/hive?createDatabaseIfNotExist=true&amp;characterEncoding=UTF-8</value>
+  </property>
+  
+  <property>
+    <name>javax.jdo.option.ConnectionDriverName</name>
+    <value>com.mysql.jdbc.Driver</value>
+  </property>
+    
+  <property>
+    <name>hive.async.log.enabled</name>
+    <value>false</value>
+  </property>
+    
+  <property>
+    <name>javax.jdo.option.ConnectionUserName</name>
+    <value>hadoop</value>
+  </property>
+    
+  <property>
+    <name>javax.jdo.option.ConnectionPassword</name>
+    <value>hadoop</value>
+  </property>
+    
+  <property>
+    <name>hive.server2.logging.operation.log.location</name>
+    <value>/opt/beh/tmp/hadoop/operation_logs</value>
+  </property>
+    
+  <property>
+    <name>hive.execution.engine</name>
+    <value>spark</value>
+  </property>
+    
+  <property>
+    <name>hive.metastore.uris</name>
+    <value>thrift://hebing3.novalocal:9083,thrift://hebing4.novalocal:9083</value>
+  </property>
+  
+  <property>
+    <name>hive.server2.thrift.port</name>
+    <value>10000</value>
+  </property>
+    
+  <property>
+    <name>hive.server2.thrift.bind.host</name>
+    <value>hebing4.novalocal</value>
+  </property>
+    
+  <property>
+    <name>hive.zookeeper.quorum</name>
+    <value>hebing1.novalocal,hebing2.novalocal,hebing3.novalocal</value>
+  </property>
+    
+  <property>
+    <name>hive.zookeeper.client.port</name>
+    <value>2188</value>
+  </property>
+    
+  <property>
+    <name>hive.cli.print.header</name>
+    <value>true</value>
+  </property>
+    
+  <property>
+    <name>hive.cli.print.current.db</name>
+    <value>true</value>
+  </property>
+    
+  <property>
+    <name>spark.master</name>
+    <value>yarn-cluster</value>
+  </property>
+    
+  <property>
+    <name>spark.eventLog.enabled</name>
+    <value>true</value>
+  </property>
+    
+  <property>
+    <name>spark.eventLog.dir</name>
+    <value>hdfs://behhb001/var/log/hadoop-spark</value>
+  </property>
+    
+  <property>
+    <name>spark.executor.memory</name>
+    <value>4g</value>
+  </property>
+    
+  <property>
+    <name>spark.driver.memory</name>
+    <value>2g</value>
+  </property>
+    
+  <property>
+    <name>spark.serializer</name>
+    <value>org.apache.spark.serializer.KryoSerializer</value>
+  </property>
+    
+  <property>
+    <name>spark.executor.cores</name>
+    <value>1</value>
+  </property>
+    
+  <property>
+    <name>spark.dynamicAllocation.enabled</name>
+    <value>true</value>
+  </property>
+    
+  <property>
+    <name>spark.shuffle.service.enabled</name>
+    <value>true</value>
+  </property>
+    
+  <property>
+    <name>spark.dynamicAllocation.initialExecutors</name>
+    <value>1</value>
+  </property>
+    
+  <property>
+    <name>spark.executor.extraJavaOptions</name>
+    <value>-XX:+UseG1GC -XX:+PrintFlagsFinal -XX:+PrintReferenceGC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintAdaptiveSizePolicy -XX:+UnlockDiagnosticVMOptions -XX:+G1SummarizeConcMark -XX:InitiatingHeapOccupancyPercent=35</value>
+  </property>
+    
+  <property>
+    <name>spark.network.timeout</name>
+    <value>300</value>
+  </property>
+    
+  <property>
+    <name>spark.driver.extraLibraryPath</name>
+    <value>/opt/beh/core/hadoop/lib/native</value>
+  </property>
+    
+  <property>
+    <name>spark.executor.extraLibraryPath</name>
+    <value>/opt/beh/core/hadoop/lib/native</value>
+  </property>
+  </configuration>
